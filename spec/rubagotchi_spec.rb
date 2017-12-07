@@ -16,8 +16,14 @@ describe Rubagotchi do
 
     describe '#hunger' do
         it 'Can get hungry' do
-            rubagotchi.add_hunger(1)
+            rubagotchi.digest(1)
             expect(rubagotchi.is_hungry?).to eq(true)
+        end
+
+        it 'Can be fed' do
+            rubagotchi.digest(1)
+            rubagotchi.feed(1)
+            expect(rubagotchi.is_hungry?).to eq(false)
         end
     end
 
