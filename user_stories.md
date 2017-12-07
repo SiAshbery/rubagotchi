@@ -21,6 +21,10 @@ I want to feed it
 
 ### MVP 2:
 ```
+So my interactions are slick
+I want simple menu and interface for interactions
+```
+```
 So I am visually engaged
 I want to see my Rubagotchi rendered in some funky ascii
 ```
