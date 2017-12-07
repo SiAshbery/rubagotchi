@@ -1,6 +1,6 @@
 # As a responsible Rubagotchi trainer...
 
-## MVP 1:
+### MVP 1:
 
 ```
 So I can care for a Rubagotchi
@@ -19,13 +19,13 @@ So I can keep my Rubagotchi's belly full
 I want to feed it
 ```
 
-## MVP 2:
+### MVP 2:
 ```
 So I am visually engaged
 I want to see my Rubagotchi rendered in some funky ascii
 ```
 
-## MVP 3:
+### MVP 3:
 
 ```
 So I know how it's doing
@@ -44,7 +44,7 @@ So that high standards of hygene are maintained
 I want to be able to clean up my Rubagotchi's poop
 ```
 
-## MVP 4:
+### MVP 4:
 
 ```
 So I understand the importance of a stimulating digital life
@@ -63,7 +63,7 @@ So that my new friend can get some rest
 I want my Rubagotchi to sleep when tired
 ```
 
-## MVP 5:
+### MVP 5:
 ```
 So I can witness the miracle of life
 I want my Rubagotchi to hatch from an egg
@@ -85,7 +85,7 @@ So that there is a natural conclusion
 I want my Rubagotchi to pass away
 ```
 
-## MVP 6:
+### MVP 6:
 ```
 So that I understand the consiquences of my actions
 I want my Rubagotchi to be able to die from neglect
@@ -99,7 +99,7 @@ So that I can do it again and learn from my experience
 I want to be able to hatch a new Rubagotchi
 ```
 
-## MVP 7:
+### MVP 7:
 ```
 So that I can pick up where I left off
 I want to continue my game
@@ -108,14 +108,20 @@ I want to continue my game
 So that I know my new friend has a life outside my own
 I want their actions and needs to appear to persist even when the programme isn't running
 ```
+## Warning...here thar be EPICS!
+### MVP 8:
+```
+So that my new friend can grow as a digital person
+I want their stats to change at different stages in their life
+```
 
-## MVP 8:
+### MVP 9:
 ```
 So that I can have a choice about my new friend
 I want to choose the species of my Rubagotchi when I start a new game
 ```
 
-## MVP 9:
+### MVP 10:
 ```
 So that there are outcomes to my choice
 I want different species of Rubagotchi to have differnt stats
