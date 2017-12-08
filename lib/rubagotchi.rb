@@ -2,6 +2,7 @@ class Rubagotchi
     attr_accessor :name
 
     DEFAULT_HUNGER_AMOUNT = 0
+    HUNGER_THRESHOLD = 1
 
     def initialize(name)
         @name = name
@@ -9,7 +10,7 @@ class Rubagotchi
     end
 
     def is_hungry?
-        @hunger >= 1
+        @hunger >= HUNGER_THRESHOLD
     end
 
     def digest(amount)
