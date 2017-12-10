@@ -13,6 +13,7 @@ describe GameManager do
     allow(@user_interface).to receive(:render_rubagotchi_fed_message)
     allow(@user_interface).to receive(:rubagotchi_name=)
     allow(@user_interface).to receive(:render_quit_warning_message)
+    allow(@user_interface).to receive(:render_goodbye_message)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)
@@ -43,6 +44,16 @@ describe GameManager do
     it 'Option 1 goes to new rubagotchi menu' do
       expect(@game_manager).to receive(:go_to_new_rubagotchi_menu)
       @game_manager.go_to_main_menu('1')
+    end
+
+    it 'Option 2 calls render goodbye message from user interface' do
+      expect(@user_interface).to receive(:render_goodbye_message)
+      allow(@game_manager).to receive(:exit).and_return(false)
+      @game_manager.go_to_main_menu('2')
+    end
+
+    it 'Option 2 quits' do
+      expect { @game_manager.go_to_main_menu('2') }.to raise_error(SystemExit)
     end
 
     it 'Returns an error if input not recognised' do

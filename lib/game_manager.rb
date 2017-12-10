@@ -15,6 +15,9 @@ class GameManager
     case @user_input
     when '1'
       go_to_new_rubagotchi_menu
+    when '2'
+      @user_interface.render_goodbye_message
+      exit
     else
       @user_interface.render_invalid_input_error
       go_to_main_menu

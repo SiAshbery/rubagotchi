@@ -62,6 +62,11 @@ describe UserInterface do
                     "1: Yes I want to get on with my life\n"\
                     "2: Noooo Shuffles I'm sorry!\n").to_stdout
       end
+
+      it 'Renders goodbye message' do
+        expect { user_interface.render_goodbye_message }.
+          to output("See You Space Cowboy...\n").to_stdout
+      end
     end
 
 end

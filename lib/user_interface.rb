@@ -44,4 +44,8 @@ class UserInterface
            "1: Yes I want to get on with my life\n"\
            "2: Noooo #{@rubagotchi_name} I'm sorry!"
     end
+
+    def render_goodbye_message
+      puts "See You Space Cowboy..."
+    end
 end
