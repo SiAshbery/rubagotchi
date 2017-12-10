@@ -61,7 +61,7 @@ describe UserInterface do
         expect { user_interface.render_quit_warning_message }.
           to output("Are you sure you want to quit?"\
                     " Little Shuffles will cease to be...\n"\
-                    "1: Yes I want to get on with my life\n"\
+                    "1: Yes I want to get on with my life.\n"\
                     "2: Noooo Shuffles I'm sorry!\n").to_stdout
       end
 

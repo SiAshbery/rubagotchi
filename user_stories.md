@@ -32,7 +32,7 @@ I want to see my Rubagotchi rendered in some funky ascii
 ### MVP 3:
 ```
 So my rubagotchi's appears alive
-I want my their needs and status to change as time passes
+I want their needs and status to change as time passes
 ```
 
 ### MVP 4:
@@ -66,7 +66,7 @@ I want to play with my Rubagotchi
 ```
 ```
 So that I know it's time for a break
-I want my Ruba gotchi to get tired
+I want my Rubagotchi to get tired
 ```
 ```
 So that my new friend can get some rest
@@ -80,7 +80,7 @@ I want my Rubagotchi to hatch from an egg
 ```
 ```
 So they can experience the world through innocent eyes
-I want my rubagotchi too grow into a a child
+I want my rubagotchi to grow into a a child
 ```
 ```
 So they can grow and mature
@@ -116,7 +116,7 @@ I want to continue my game
 ```
 ```
 So that I know my new friend has a life outside my own
-I want their actions and needs to appear to persist even when the programme isn't running
+I want their actions and needs to appear to persist even when the program isn't running
 ```
 ## Warning...here thar be EPICS!
 ### MVP 9:

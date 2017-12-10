@@ -42,8 +42,8 @@ class UserInterface
 
     def render_quit_warning_message
       puts "Are you sure you want to quit?"\
-           " Little Shuffles will cease to be...\n"\
-           "1: Yes I want to get on with my life\n"\
+           " Little #{@rubagotchi_name} will cease to be...\n"\
+           "1: Yes I want to get on with my life.\n"\
            "2: Noooo #{@rubagotchi_name} I'm sorry!"
     end
 
