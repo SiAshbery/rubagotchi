@@ -13,11 +13,11 @@ class Rubagotchi
         @hunger >= HUNGER_THRESHOLD
     end
 
-    def digest(amount)
+    def digest(amount = 1)
         @hunger += amount
     end
 
-    def feed(amount)
+    def feed(amount = 1)
         @hunger -= amount
     end
 

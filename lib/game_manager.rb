@@ -30,6 +30,8 @@ class GameManager
     case user_input
     when '1'
       check_rubagotchi_hunger
+    when '2'
+      @rubagotchi.feed
     else
       @user_interface.render_invalid_input_error
     end

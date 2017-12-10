@@ -90,5 +90,10 @@ describe GameManager do
       expect(@user_interface).to receive(:render_is_not_hungry_message)
       @game_manager.go_to_rubagotchi_interaction_menu('1')
     end
+
+    it 'Calls feed on rubagotchi' do
+      expect(@rubagotchi).to receive(:feed)
+      @game_manager.go_to_rubagotchi_interaction_menu('2')
+    end
   end
 end
