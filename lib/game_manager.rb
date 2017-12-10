@@ -21,5 +21,10 @@ class GameManager
   def go_to_new_rubagotchi_menu(user_input = gets.chomp)
     @user_interface.render_name_input_prompt
     @rubagotchi = Rubagotchi.new(user_input)
+    go_to_rubagotchi_interaction_menu
+  end
+
+  def go_to_rubagotchi_interaction_menu
+    @user_interface.render_rubagotchi_interaction_menu(@rubagotchi.name)
   end
 end

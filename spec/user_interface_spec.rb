@@ -4,17 +4,28 @@ describe UserInterface do
 
     subject(:user_interface) { described_class.new() }
 
-    describe '#Prompts' do
-        it 'renders the menu uptions' do
+    describe '#Menus' do
+        it 'renders the main menu uptions' do
             expect { user_interface.render_main_menu }.
               to output("Welcome to Rubagotchi!\n"\
                         "Please input a number from the menu to make your selection.\n"\
                         "1: Hatch a new Rubagotchi.\n").to_stdout
         end
-        it 'renders input name prompt' do
-          expect { user_interface.render_name_input_prompt }.
-            to output("Please input a name for your Rubagotchi.\n").to_stdout
+
+        it 'renders the rubagotchi interaction menu uptions' do
+            expect { user_interface.render_rubagotchi_interaction_menu('Snuffles') }.
+              to output("Snuffles is awake!\n"\
+                        "Please input a number from the menu to make your selection.\n"\
+                        "1: Check Snuffles's hunger.\n"\
+                        "2: Feed Snuffles.\n").to_stdout
         end
+    end
+
+    describe '#Prompts' do
+      it 'renders input name prompt' do
+        expect { user_interface.render_name_input_prompt }.
+          to output("Please input a name for your Rubagotchi.\n").to_stdout
+      end
     end
 
     describe '#Errors' do
