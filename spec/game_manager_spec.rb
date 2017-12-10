@@ -93,7 +93,9 @@ describe GameManager do
   describe 'Go to interaction menu' do
     before(:each) do
       allow(@game_manager).to receive(:go_to_confirm_quit_menu)
+      allow(@game_manager).to receive(:gets).and_return("3\n")
     end
+
     it 'Calls render rubagotchi interaction menu on user interface' do
       expect(@user_interface).to receive(:render_rubagotchi_interaction_menu)
       @game_manager.go_to_rubagotchi_interaction_menu('1')
@@ -116,6 +118,11 @@ describe GameManager do
       @game_manager.go_to_rubagotchi_interaction_menu('1')
     end
 
+    it 'Repeats menu if input is 1' do
+      expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
+      @game_manager.go_to_rubagotchi_interaction_menu('1')
+    end
+
     it 'Calls feed on rubagotchi' do
       expect(@rubagotchi).to receive(:feed)
       @game_manager.go_to_rubagotchi_interaction_menu('2')
@@ -126,6 +133,11 @@ describe GameManager do
       @game_manager.go_to_rubagotchi_interaction_menu('2')
     end
 
+    it 'Repeats menu if input is 2' do
+      expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
+      @game_manager.go_to_rubagotchi_interaction_menu('2')
+    end
+
     it 'Goes to quit confirm menu' do
       expect(@game_manager).to receive(:go_to_confirm_quit_menu)
       @game_manager.go_to_rubagotchi_interaction_menu('3')
@@ -133,13 +145,11 @@ describe GameManager do
 
     it 'Returns an error if input not recognised' do
       expect(@user_interface).to receive(:render_invalid_input_error)
-      allow(@game_manager).to receive(:gets).and_return("1\n")
       @game_manager.go_to_rubagotchi_interaction_menu('splunge')
     end
 
     it 'Repeats menu if input is invalid' do
       expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
-      allow(@game_manager).to receive(:gets).and_return("1\n")
       @game_manager.go_to_rubagotchi_interaction_menu('splunge')
     end
   end

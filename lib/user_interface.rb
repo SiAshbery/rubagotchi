@@ -8,14 +8,16 @@ class UserInterface
     def render_main_menu
         puts "Welcome to Rubagotchi!\n"\
              "Please input a number from the menu to make your selection.\n"\
-             "1: Hatch a new Rubagotchi."
+             "1: Hatch a new Rubagotchi.\n"\
+             "2: Quit Rubagotchi."
     end
 
     def render_rubagotchi_interaction_menu
         puts "#{@rubagotchi_name} is awake!\n"\
              "Please input a number from the menu to make your selection.\n"\
              "1: Check #{@rubagotchi_name}'s hunger.\n"\
-             "2: Feed #{@rubagotchi_name}."
+             "2: Feed #{@rubagotchi_name}.\n"\
+             "3: Return to main menu."
     end
 
     def render_invalid_input_error

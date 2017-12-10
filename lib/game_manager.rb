@@ -37,8 +37,10 @@ class GameManager
     case @user_input
     when '1'
       check_rubagotchi_hunger
+      go_to_rubagotchi_interaction_menu
     when '2'
       feed_rubagotchi
+      go_to_rubagotchi_interaction_menu
     when '3'
       go_to_confirm_quit_menu
     else
