@@ -13,6 +13,8 @@ class GameManager
     case user_input
     when '1'
       @rubagotchi = Rubagotchi.new('Snuffles')
+    else
+      @user_interface.render_invalid_input_error
     end
   end
 end

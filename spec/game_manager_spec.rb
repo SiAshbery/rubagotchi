@@ -6,6 +6,7 @@ describe GameManager do
   before(:each) do
     @user_interface = double(:user_interface)
     allow(@user_interface).to receive(:render_main_menu)
+    allow(@user_interface).to receive(:render_invalid_input_error)
 
     @game_manager = GameManager.new(@user_interface)
   end
@@ -25,6 +26,11 @@ describe GameManager do
     it 'Option 1 creates a new rubagotchi' do
       @game_manager.go_to_main_menu('1')
       expect(@game_manager.rubagotchi).to be_a Rubagotchi
+    end
+
+    it 'Returns an error if input not recognised' do
+      expect(@user_interface).to receive(:render_invalid_input_error)
+      @game_manager.go_to_main_menu('splunge')
     end
   end
 end

@@ -13,4 +13,11 @@ describe UserInterface do
         end
     end
 
+    describe '#Errors' do
+      it 'renders invalid input error' do
+        expect { user_interface.render_invalid_input_error }.
+          to output("I'm sorry, I don't understand\n").to_stdout
+      end
+    end
+
 end
