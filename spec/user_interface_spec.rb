@@ -4,6 +4,10 @@ describe UserInterface do
 
     subject(:user_interface) { described_class.new() }
 
+    before(:each) do
+      user_interface.rubagotchi_name = 'Snuffles'
+    end
+
     describe '#Menus' do
         it 'renders the main menu uptions' do
             expect { user_interface.render_main_menu }.
@@ -13,7 +17,7 @@ describe UserInterface do
         end
 
         it 'renders the rubagotchi interaction menu uptions' do
-            expect { user_interface.render_rubagotchi_interaction_menu('Snuffles') }.
+            expect { user_interface.render_rubagotchi_interaction_menu }.
               to output("Snuffles is awake!\n"\
                         "Please input a number from the menu to make your selection.\n"\
                         "1: Check Snuffles's hunger.\n"\
@@ -37,17 +41,17 @@ describe UserInterface do
 
     describe '#Messages' do
       it 'renders is hungry message' do
-        expect { user_interface.render_is_hungry_message('Snuffles') }.
+        expect { user_interface.render_is_hungry_message }.
           to output("Snuffles needs noms, STAT!\n").to_stdout
       end
 
       it 'renders is not hungry message' do
-        expect { user_interface.render_is_not_hungry_message('Snuffles') }.
+        expect { user_interface.render_is_not_hungry_message }.
           to output("Snuffles isn't hungry right now.\n").to_stdout
       end
 
       it 'renders rubagotchi fed message' do
-        expect { user_interface.render_rubagotchi_fed_message('Snuffles') }.
+        expect { user_interface.render_rubagotchi_fed_message }.
           to output("You fed a sandwich to Snuffles.\n").to_stdout
       end
     end

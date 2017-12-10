@@ -22,11 +22,12 @@ class GameManager
   def go_to_new_rubagotchi_menu(user_input = gets.chomp, rubagotchi = Rubagotchi.new(user_input))
     @user_interface.render_name_input_prompt
     @rubagotchi = rubagotchi
+    @user_interface.rubagotchi_name = @rubagotchi.name
     go_to_rubagotchi_interaction_menu
   end
 
   def go_to_rubagotchi_interaction_menu(user_input = gets.chomp)
-    @user_interface.render_rubagotchi_interaction_menu(@rubagotchi.name)
+    @user_interface.render_rubagotchi_interaction_menu
     case user_input
     when '1'
       check_rubagotchi_hunger
@@ -40,14 +41,14 @@ class GameManager
 private
   def check_rubagotchi_hunger
     if @rubagotchi.is_hungry?
-      @user_interface.render_is_hungry_message(@rubagotchi.name)
+      @user_interface.render_is_hungry_message
     else
-      @user_interface.render_is_not_hungry_message(@rubagotchi.name)
+      @user_interface.render_is_not_hungry_message
     end
   end
 
   def feed_rubagotchi
     @rubagotchi.feed
-    @user_interface.render_rubagotchi_fed_message(@rubagotchi.name)
+    @user_interface.render_rubagotchi_fed_message
   end
 end

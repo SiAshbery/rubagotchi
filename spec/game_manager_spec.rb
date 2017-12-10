@@ -11,6 +11,7 @@ describe GameManager do
     allow(@user_interface).to receive(:render_is_hungry_message)
     allow(@user_interface).to receive(:render_is_not_hungry_message)
     allow(@user_interface).to receive(:render_rubagotchi_fed_message)
+    allow(@user_interface).to receive(:rubagotchi_name=)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)
