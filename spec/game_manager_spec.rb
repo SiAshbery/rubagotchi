@@ -1,6 +1,8 @@
 require 'game_manager'
 
 describe GameManager do
+  let(:rubagotchi) { double :rubagotchi }
+
   before(:each) do
     @user_interface = double(:user_interface)
     allow(@user_interface).to receive(:render_main_menu)
@@ -23,6 +25,12 @@ describe GameManager do
     it 'Calls render main menu on user interface' do
       expect(@user_interface).to receive(:render_main_menu)
       @game_manager.go_to_main_menu
+    end
+
+    it 'Option 1 creates a new rubagotchi' do
+      @game_manager.go_to_main_menu()
+
+      expect(@game_manager.rubagotchi).to be_a Rubagotchi
     end
   end
 end
