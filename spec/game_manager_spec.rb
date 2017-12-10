@@ -1,7 +1,6 @@
 require 'game_manager'
 
 describe GameManager do
-  let(:rubagotchi) { double :rubagotchi }
 
   before(:each) do
     @user_interface = double(:user_interface)
@@ -10,7 +9,11 @@ describe GameManager do
     allow(@user_interface).to receive(:render_name_input_prompt)
     allow(@user_interface).to receive(:render_rubagotchi_interaction_menu)
 
-    @game_manager = GameManager.new(@user_interface)
+    @rubagotchi = double(:rubagotchi)
+    allow(@rubagotchi).to receive(:name)
+    allow(@rubagotchi).to receive(:is_hungry?)
+
+    @game_manager = GameManager.new(@user_interface, @rubagotchi)
   end
 
   describe '#Initialize' do
@@ -20,14 +23,14 @@ describe GameManager do
   end
 
   describe '#Go To Main Menu' do
-
     before(:each) do
       allow(@user_interface).to receive(:render_main_menu)
+      allow(@game_manager).to receive(:go_to_new_rubagotchi_menu)
+      allow(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
     end
 
     it 'Calls render main menu on user interface' do
       expect(@user_interface).to receive(:render_main_menu)
-      allow(@game_manager).to receive(:go_to_new_rubagotchi_menu)
       @game_manager.go_to_main_menu('1')
     end
 
@@ -42,27 +45,37 @@ describe GameManager do
     end
   end
 
-  describe '#Got to new rubagotchi menu' do
-    it 'Calls renders name input prompt on user interface' do
+  describe '#Go to new rubagotchi menu' do
+    before(:each) do
+      allow(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
+    end
+
+    it 'Calls render name input prompt on user interface' do
       expect(@user_interface).to receive(:render_name_input_prompt)
-      @game_manager.go_to_new_rubagotchi_menu('snuffles')
+      @game_manager.go_to_new_rubagotchi_menu('Snuffles')
     end
 
     it 'Creates a new rubagotchi' do
-      @game_manager.go_to_new_rubagotchi_menu('snuffles')
+      @game_manager.go_to_new_rubagotchi_menu('Snuffles')
       expect(@game_manager.rubagotchi).to be_a Rubagotchi
     end
 
     it 'Goes to rubagotchi interaction menu' do
       expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
-      @game_manager.go_to_new_rubagotchi_menu('snuffles')
+      @game_manager.go_to_new_rubagotchi_menu('Snuffles')
     end
   end
 
   describe 'Go to interaction menu' do
+
     it 'Calls render rubagotchi interaction menu on user interface' do
       expect(@user_interface).to receive(:render_rubagotchi_interaction_menu)
-      @game_manager.go_to_new_rubagotchi_menu('snuffles')
+      @game_manager.go_to_rubagotchi_interaction_menu('1')
+    end
+
+    it 'Option 1 checks Rubagotchi hunger' do
+      expect(@rubagotchi).to receive(:is_hungry?)
+      @game_manager.go_to_rubagotchi_interaction_menu('1')
     end
   end
 end

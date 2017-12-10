@@ -9,7 +9,7 @@ class UserInterface
         puts "#{rubagotchi_name} is awake!\n"\
              "Please input a number from the menu to make your selection.\n"\
              "1: Check #{rubagotchi_name}'s hunger.\n"\
-             "2: Feed #{rubagotchi_name}.\n"
+             "2: Feed #{rubagotchi_name}."
     end
 
     def render_invalid_input_error
