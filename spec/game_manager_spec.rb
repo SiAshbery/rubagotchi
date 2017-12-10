@@ -12,6 +12,7 @@ describe GameManager do
     allow(@user_interface).to receive(:render_is_not_hungry_message)
     allow(@user_interface).to receive(:render_rubagotchi_fed_message)
     allow(@user_interface).to receive(:rubagotchi_name=)
+    allow(@user_interface).to receive(:render_quit_warning_message)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)
@@ -46,6 +47,13 @@ describe GameManager do
 
     it 'Returns an error if input not recognised' do
       expect(@user_interface).to receive(:render_invalid_input_error)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
+      @game_manager.go_to_main_menu('splunge')
+    end
+
+    it 'Repeats menu if input is invalid' do
+      expect(@game_manager).to receive(:go_to_main_menu)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
       @game_manager.go_to_main_menu('splunge')
     end
   end
@@ -72,6 +80,9 @@ describe GameManager do
   end
 
   describe 'Go to interaction menu' do
+    before(:each) do
+      allow(@game_manager).to receive(:go_to_confirm_quit_menu)
+    end
     it 'Calls render rubagotchi interaction menu on user interface' do
       expect(@user_interface).to receive(:render_rubagotchi_interaction_menu)
       @game_manager.go_to_rubagotchi_interaction_menu('1')
@@ -102,6 +113,56 @@ describe GameManager do
     it 'Calls render rubagotchi fed message on user interface' do
       expect(@user_interface).to receive(:render_rubagotchi_fed_message)
       @game_manager.go_to_rubagotchi_interaction_menu('2')
+    end
+
+    it 'Goes to quit confirm menu' do
+      expect(@game_manager).to receive(:go_to_confirm_quit_menu)
+      @game_manager.go_to_rubagotchi_interaction_menu('3')
+    end
+
+    it 'Returns an error if input not recognised' do
+      expect(@user_interface).to receive(:render_invalid_input_error)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
+      @game_manager.go_to_rubagotchi_interaction_menu('splunge')
+    end
+
+    it 'Repeats menu if input is invalid' do
+      expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
+      @game_manager.go_to_rubagotchi_interaction_menu('splunge')
+    end
+  end
+
+  describe 'Go to confirm quit menu' do
+    before(:each) do
+      allow(@game_manager).to receive(:go_to_main_menu)
+    end
+
+    it 'Calls render quit warning message on user interface' do
+      expect(@user_interface).to receive(:render_quit_warning_message)
+      @game_manager.go_to_confirm_quit_menu('1')
+    end
+
+    it 'Quit to main menu' do
+      expect(@game_manager).to receive(:go_to_main_menu)
+      @game_manager.go_to_confirm_quit_menu('1')
+    end
+
+    it 'Returns to game' do
+      expect(@game_manager).to receive(:go_to_rubagotchi_interaction_menu)
+      @game_manager.go_to_confirm_quit_menu('2')
+    end
+
+    it 'Returns an error if input not recognised' do
+      expect(@user_interface).to receive(:render_invalid_input_error)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
+      @game_manager.go_to_confirm_quit_menu('splunge')
+    end
+
+    it 'Repeats menu if input is invalid' do
+      expect(@game_manager).to receive(:go_to_confirm_quit_menu)
+      allow(@game_manager).to receive(:gets).and_return("1\n")
+      @game_manager.go_to_confirm_quit_menu('splunge')
     end
   end
 end

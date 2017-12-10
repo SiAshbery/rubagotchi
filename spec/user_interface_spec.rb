@@ -5,7 +5,7 @@ describe UserInterface do
     subject(:user_interface) { described_class.new() }
 
     before(:each) do
-      user_interface.rubagotchi_name = 'Snuffles'
+      user_interface.rubagotchi_name = 'Shuffles'
     end
 
     describe '#Menus' do
@@ -18,10 +18,10 @@ describe UserInterface do
 
         it 'renders the rubagotchi interaction menu uptions' do
             expect { user_interface.render_rubagotchi_interaction_menu }.
-              to output("Snuffles is awake!\n"\
+              to output("Shuffles is awake!\n"\
                         "Please input a number from the menu to make your selection.\n"\
-                        "1: Check Snuffles's hunger.\n"\
-                        "2: Feed Snuffles.\n").to_stdout
+                        "1: Check Shuffles's hunger.\n"\
+                        "2: Feed Shuffles.\n").to_stdout
         end
     end
 
@@ -42,17 +42,25 @@ describe UserInterface do
     describe '#Messages' do
       it 'renders is hungry message' do
         expect { user_interface.render_is_hungry_message }.
-          to output("Snuffles needs noms, STAT!\n").to_stdout
+          to output("Shuffles needs noms, STAT!\n").to_stdout
       end
 
       it 'renders is not hungry message' do
         expect { user_interface.render_is_not_hungry_message }.
-          to output("Snuffles isn't hungry right now.\n").to_stdout
+          to output("Shuffles isn't hungry right now.\n").to_stdout
       end
 
       it 'renders rubagotchi fed message' do
         expect { user_interface.render_rubagotchi_fed_message }.
-          to output("You fed a sandwich to Snuffles.\n").to_stdout
+          to output("You fed a sandwich to Shuffles.\n").to_stdout
+      end
+
+      it 'renders quit warning message' do
+        expect { user_interface.render_quit_warning_message }.
+          to output("Are you sure you want to quit?"\
+                    " Little Shuffles will cease to be...\n"\
+                    "1: Yes I want to get on with my life\n"\
+                    "2: Noooo Shuffles I'm sorry!\n").to_stdout
       end
     end
 
