@@ -31,7 +31,7 @@ class GameManager
     when '1'
       check_rubagotchi_hunger
     when '2'
-      @rubagotchi.feed
+      feed_rubagotchi
     else
       @user_interface.render_invalid_input_error
     end
@@ -44,5 +44,10 @@ private
     else
       @user_interface.render_is_not_hungry_message(@rubagotchi.name)
     end
+  end
+
+  def feed_rubagotchi
+    @rubagotchi.feed
+    @user_interface.render_rubagotchi_fed_message(@rubagotchi.name)
   end
 end

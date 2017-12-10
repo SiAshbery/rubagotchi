@@ -10,10 +10,12 @@ describe GameManager do
     allow(@user_interface).to receive(:render_rubagotchi_interaction_menu)
     allow(@user_interface).to receive(:render_is_hungry_message)
     allow(@user_interface).to receive(:render_is_not_hungry_message)
+    allow(@user_interface).to receive(:render_rubagotchi_fed_message)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)
     allow(@rubagotchi).to receive(:is_hungry?)
+    allow(@rubagotchi).to receive(:feed)
 
     @game_manager = GameManager.new(@user_interface, @rubagotchi)
   end
@@ -93,6 +95,11 @@ describe GameManager do
 
     it 'Calls feed on rubagotchi' do
       expect(@rubagotchi).to receive(:feed)
+      @game_manager.go_to_rubagotchi_interaction_menu('2')
+    end
+
+    it 'Calls render rubagotchi fed message on user interface' do
+      expect(@user_interface).to receive(:render_rubagotchi_fed_message)
       @game_manager.go_to_rubagotchi_interaction_menu('2')
     end
   end

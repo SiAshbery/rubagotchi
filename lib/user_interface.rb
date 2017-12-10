@@ -27,4 +27,8 @@ class UserInterface
     def render_is_not_hungry_message(rubagotchi_name)
       puts "#{rubagotchi_name} isn't hungry right now."
     end
+
+    def render_rubagotchi_fed_message(rubagotchi_name)
+      puts "You fed a sandwich to #{rubagotchi_name}."
+    end
 end

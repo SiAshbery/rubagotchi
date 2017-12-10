@@ -45,6 +45,11 @@ describe UserInterface do
         expect { user_interface.render_is_not_hungry_message('Snuffles') }.
           to output("Snuffles isn't hungry right now.\n").to_stdout
       end
+
+      it 'renders rubagotchi fed message' do
+        expect { user_interface.render_rubagotchi_fed_message('Snuffles') }.
+          to output("You fed a sandwich to Snuffles.\n").to_stdout
+      end
     end
 
 end
