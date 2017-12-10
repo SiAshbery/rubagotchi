@@ -5,6 +5,10 @@ class GameManager
 
   def initialize(user_interface = UserInterface.new)
     @user_interface = user_interface
+    go_to_main_menu
+  end
+
+  def go_to_main_menu
     @user_interface.render_main_menu
   end
 
