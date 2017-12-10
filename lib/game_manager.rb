@@ -6,12 +6,13 @@ class GameManager
 
   def initialize(user_interface = UserInterface.new)
     @user_interface = user_interface
-    go_to_main_menu
   end
 
-  def go_to_main_menu()
+  def go_to_main_menu(user_input = gets.chomp)
     @user_interface.render_main_menu
-    @rubagotchi = Rubagotchi.new('Snuffles')
+    case user_input
+    when '1'
+      @rubagotchi = Rubagotchi.new('Snuffles')
+    end
   end
-
 end
