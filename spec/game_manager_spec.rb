@@ -8,6 +8,8 @@ describe GameManager do
     allow(@user_interface).to receive(:render_invalid_input_error)
     allow(@user_interface).to receive(:render_name_input_prompt)
     allow(@user_interface).to receive(:render_rubagotchi_interaction_menu)
+    allow(@user_interface).to receive(:render_is_hungry_message)
+    allow(@user_interface).to receive(:render_is_not_hungry_message)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)
@@ -67,7 +69,6 @@ describe GameManager do
   end
 
   describe 'Go to interaction menu' do
-
     it 'Calls render rubagotchi interaction menu on user interface' do
       expect(@user_interface).to receive(:render_rubagotchi_interaction_menu)
       @game_manager.go_to_rubagotchi_interaction_menu('1')
@@ -75,6 +76,18 @@ describe GameManager do
 
     it 'Option 1 checks Rubagotchi hunger' do
       expect(@rubagotchi).to receive(:is_hungry?)
+      @game_manager.go_to_rubagotchi_interaction_menu('1')
+    end
+
+    it 'Calls render is hungry message if Rubagotchi is hungry' do
+      allow(@rubagotchi).to receive(:is_hungry?).and_return(true)
+      expect(@user_interface).to receive(:render_is_hungry_message)
+      @game_manager.go_to_rubagotchi_interaction_menu('1')
+    end
+
+    it 'Calls render is not hungry message if Rubagotchi is hungry' do
+      allow(@rubagotchi).to receive(:is_hungry?).and_return(false)
+      expect(@user_interface).to receive(:render_is_not_hungry_message)
       @game_manager.go_to_rubagotchi_interaction_menu('1')
     end
   end

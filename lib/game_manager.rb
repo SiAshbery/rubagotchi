@@ -29,9 +29,18 @@ class GameManager
     @user_interface.render_rubagotchi_interaction_menu(@rubagotchi.name)
     case user_input
     when '1'
-      @rubagotchi.is_hungry?
+      check_rubagotchi_hunger
     else
       @user_interface.render_invalid_input_error
+    end
+  end
+
+private
+  def check_rubagotchi_hunger
+    if @rubagotchi.is_hungry?
+      @user_interface.render_is_hungry_message(@rubagotchi.name)
+    else
+      @user_interface.render_is_not_hungry_message(@rubagotchi.name)
     end
   end
 end

@@ -35,4 +35,16 @@ describe UserInterface do
       end
     end
 
+    describe '#Messages' do
+      it 'renders is hungry message' do
+        expect { user_interface.render_is_hungry_message('Snuffles') }.
+          to output("Snuffles needs noms, STAT!\n").to_stdout
+      end
+
+      it 'renders is not hungry message' do
+        expect { user_interface.render_is_not_hungry_message('Snuffles') }.
+          to output("Snuffles isn't hungry right now.\n").to_stdout
+      end
+    end
+
 end

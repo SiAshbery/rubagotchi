@@ -19,4 +19,12 @@ class UserInterface
     def render_name_input_prompt
       puts "Please input a name for your Rubagotchi."
     end
+
+    def render_is_hungry_message(rubagotchi_name)
+      puts "#{rubagotchi_name} needs noms, STAT!"
+    end
+
+    def render_is_not_hungry_message(rubagotchi_name)
+      puts "#{rubagotchi_name} isn't hungry right now."
+    end
 end
