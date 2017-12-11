@@ -62,7 +62,7 @@ class GameManager
 
   def go_to_confirm_quit_menu(user_input = nil)
     loop do
-      @user_interface.render_quit_warning_message
+      @user_interface.render_quit_warning_menu
       get_user_input(user_input)
       case @user_input
       when '1'

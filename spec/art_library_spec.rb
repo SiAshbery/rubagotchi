@@ -4,6 +4,18 @@ describe ArtLibrary do
 
   subject(:art_library) { described_class.new() }
 
+  describe '#Titles' do
+    it 'return main title' do
+      expect(art_library.main_title).to eq(
+      ",------. ,--. ,--.,-----.    ,---.   ,----.    ,-----. ,--------. ,-----.,--.  ,--.,--.\n"\
+      "|  .--. '|  | |  ||  |) /_  /  O   )'  .-./   '  .-.  ''--.  .--''  .--./|  '--'  ||  |\n"\
+      "|  '--'.'|  | |  ||  .-.  !|  .-.  ||  | .---.|  | |  |   |  |   |  |    |  .--.  ||  |\n"\
+      "|  | )  )'  '-'  '|  '--' /|  | |  |'  '--'  |'  '-'  '   |  |   '  '--'-|  |  |  ||  |\n"\
+      "`--' '--' `-----' `------' `--' `--' `------'  `-----'    `--'    `-----'`--'  `--'`--'\n" 
+      )
+    end
+  end
+
   describe '#Rubagotchi Art' do
     it 'Returns the idle pose for a rubagotchi' do
       expect(art_library.rubagotchi_idle_pose).to eq(

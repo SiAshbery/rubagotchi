@@ -1,23 +1,37 @@
+require 'art_library'
+
 class UserInterface
   attr_writer :rubagotchi_name
 
-    def initialize
+    def initialize(art_library = ArtLibrary.new)
       @rubagotchi_name = nil
+      @art_library = art_library
     end
 
     def render_main_menu
-        puts "Welcome to Rubagotchi!\n"\
+        puts @art_library.main_title +
+             "Welcome to Rubagotchi!\n"\
              "Please input a number from the menu to make your selection.\n"\
              "1: Hatch a new Rubagotchi.\n"\
              "2: Quit Rubagotchi."
     end
 
     def render_rubagotchi_interaction_menu
-        puts "#{@rubagotchi_name} is awake!\n"\
+        puts @art_library.main_title +
+             @art_library.rubagotchi_idle_pose +
+             "#{@rubagotchi_name} is awake!\n"\
              "Please input a number from the menu to make your selection.\n"\
              "1: Check #{@rubagotchi_name}'s hunger.\n"\
              "2: Feed #{@rubagotchi_name}.\n"\
              "3: Return to main menu."
+    end
+
+    def render_quit_warning_menu
+      puts @art_library.main_title +
+           "Are you sure you want to quit?"\
+           " Little #{@rubagotchi_name} will cease to be...\n"\
+           "1: Yes I want to get on with my life.\n"\
+           "2: Noooo #{@rubagotchi_name} I'm sorry!"
     end
 
     def render_invalid_input_error
@@ -38,13 +52,6 @@ class UserInterface
 
     def render_rubagotchi_fed_message
       puts "You fed a sandwich to #{@rubagotchi_name}."
-    end
-
-    def render_quit_warning_message
-      puts "Are you sure you want to quit?"\
-           " Little #{@rubagotchi_name} will cease to be...\n"\
-           "1: Yes I want to get on with my life.\n"\
-           "2: Noooo #{@rubagotchi_name} I'm sorry!"
     end
 
     def render_goodbye_message

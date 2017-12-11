@@ -12,7 +12,7 @@ describe GameManager do
     allow(@user_interface).to receive(:render_is_not_hungry_message)
     allow(@user_interface).to receive(:render_rubagotchi_fed_message)
     allow(@user_interface).to receive(:rubagotchi_name=)
-    allow(@user_interface).to receive(:render_quit_warning_message)
+    allow(@user_interface).to receive(:render_quit_warning_menu)
     allow(@user_interface).to receive(:render_goodbye_message)
 
     @rubagotchi = double(:rubagotchi)
@@ -162,7 +162,7 @@ describe GameManager do
     end
 
     it 'Calls render quit warning message on user interface' do
-      expect(@user_interface).to receive(:render_quit_warning_message)
+      expect(@user_interface).to receive(:render_quit_warning_menu)
       @game_manager.go_to_confirm_quit_menu('1')
     end
 
