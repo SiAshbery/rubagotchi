@@ -6,6 +6,7 @@ describe UserInterface do
       @art_library = double(:art_library)
       allow(@art_library).to receive(:rubagotchi_idle_pose).and_return("")
       allow(@art_library).to receive(:main_title).and_return("")
+      allow(@art_library).to receive(:large_horizontal_divider).and_return("")
       @user_interface = UserInterface.new(@art_library)
       @user_interface.rubagotchi_name = 'Shuffles'
     end
@@ -24,7 +25,13 @@ describe UserInterface do
           expect(@art_library).to receive(:main_title)
           @user_interface.render_main_menu
         end
+
+        it 'Calls large_horizontal_divider from art_library' do
+          expect(@art_library).to receive(:large_horizontal_divider)
+          @user_interface.render_main_menu
+        end
       end
+
       context '#Interaction menu' do
         it 'renders the rubagotchi interaction menu uptions' do
             expect { @user_interface.render_rubagotchi_interaction_menu }.
@@ -44,6 +51,11 @@ describe UserInterface do
           expect(@art_library).to receive(:main_title)
           @user_interface.render_rubagotchi_interaction_menu
         end
+
+        it 'Calls large_horizontal_divider from art_library' do
+          expect(@art_library).to receive(:large_horizontal_divider)
+          @user_interface.render_rubagotchi_interaction_menu
+        end
       end
 
       context '#Quit menu' do
@@ -57,6 +69,11 @@ describe UserInterface do
 
         it 'Calls main title from art_library' do
           expect(@art_library).to receive(:main_title)
+          @user_interface.render_quit_warning_menu
+        end
+
+        it 'Calls large_horizontal_divider from art_library' do
+          expect(@art_library).to receive(:large_horizontal_divider)
           @user_interface.render_quit_warning_menu
         end
       end

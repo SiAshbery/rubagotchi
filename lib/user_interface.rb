@@ -1,4 +1,4 @@
-require 'art_library'
+require_relative './art_library'
 
 class UserInterface
   attr_writer :rubagotchi_name
@@ -13,7 +13,8 @@ class UserInterface
              "Welcome to Rubagotchi!\n"\
              "Please input a number from the menu to make your selection.\n"\
              "1: Hatch a new Rubagotchi.\n"\
-             "2: Quit Rubagotchi."
+             "2: Quit Rubagotchi.\n" +
+             @art_library.large_horizontal_divider
     end
 
     def render_rubagotchi_interaction_menu
@@ -23,7 +24,8 @@ class UserInterface
              "Please input a number from the menu to make your selection.\n"\
              "1: Check #{@rubagotchi_name}'s hunger.\n"\
              "2: Feed #{@rubagotchi_name}.\n"\
-             "3: Return to main menu."
+             "3: Return to main menu.\n" +
+             @art_library.large_horizontal_divider
     end
 
     def render_quit_warning_menu
@@ -31,7 +33,8 @@ class UserInterface
            "Are you sure you want to quit?"\
            " Little #{@rubagotchi_name} will cease to be...\n"\
            "1: Yes I want to get on with my life.\n"\
-           "2: Noooo #{@rubagotchi_name} I'm sorry!"
+           "2: Noooo #{@rubagotchi_name} I'm sorry!\n" +
+           @art_library.large_horizontal_divider
     end
 
     def render_invalid_input_error
