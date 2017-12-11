@@ -97,6 +97,7 @@ private
   end
 
   def feed_rubagotchi
+    # TODO: Wait until user presset enter to continue back to menu
     @rubagotchi.feed
     @user_interface.render_rubagotchi_fed_message
     go_to_rubagotchi_interaction_menu
