@@ -18,11 +18,11 @@ class ArtLibrary
   end
 
   def rubagotchi_idle_pose
-                 " |^|   |^|\n"\
-                 " : )   ( :\n"\
-                 "|   O O   |\n"\
-                 "(  )-v-(  )\n"\
-                 " [m_____m]\n" +
+    "                                          |^|   |^|\n"\
+    "                                          : )   ( :\n"\
+    "                                         |   O O   |\n"\
+    "                                         (  )-v-(  )\n"\
+    "                                          [m_____m]\n" +
     large_horizontal_divider
   end
 

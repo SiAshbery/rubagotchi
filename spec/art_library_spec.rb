@@ -34,11 +34,11 @@ describe ArtLibrary do
 
     it 'Returns the idle pose for a rubagotchi' do
       expect(@art_library.rubagotchi_idle_pose).to eq(
-                 " |^|   |^|\n"\
-                 " : )   ( :\n"\
-                 "|   O O   |\n"\
-                 "(  )-v-(  )\n"\
-                 " [m_____m]\n"
+        "                                          |^|   |^|\n"\
+        "                                          : )   ( :\n"\
+        "                                         |   O O   |\n"\
+        "                                         (  )-v-(  )\n"\
+        "                                          [m_____m]\n"
       )
     end
 
