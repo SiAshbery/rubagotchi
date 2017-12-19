@@ -87,7 +87,7 @@ describe UserInterface do
 
       it 'renders press any key prompt' do
          expect { @user_interface.render_press_any_key_prompt }.
-          to output("Press any key to continue.\n").to_stdout
+          to output("Hit return to continue.\n").to_stdout
       end
     end
 

@@ -50,7 +50,7 @@ class UserInterface
     end
 
     def render_press_any_key_prompt
-      puts "Press any key to continue."
+      puts "Hit return to continue."
     end
 
     def render_is_hungry_message
