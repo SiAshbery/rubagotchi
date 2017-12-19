@@ -84,6 +84,11 @@ describe UserInterface do
         expect { @user_interface.render_name_input_prompt }.
           to output("Please input a name for your Rubagotchi.\n").to_stdout
       end
+
+      it 'renders press any key prompt' do
+         expect { @user_interface.render_press_any_key_prompt }.
+          to output("Press any key to continue.\n").to_stdout
+      end
     end
 
     describe '#Errors' do

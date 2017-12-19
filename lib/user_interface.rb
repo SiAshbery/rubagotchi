@@ -45,6 +45,10 @@ class UserInterface
       puts "Please input a name for your Rubagotchi."
     end
 
+    def render_press_any_key_prompt
+      puts "Press any key to continue."
+    end
+
     def render_is_hungry_message
       puts "#{@rubagotchi_name} needs noms, STAT!"
     end

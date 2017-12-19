@@ -14,6 +14,7 @@ describe GameManager do
     allow(@user_interface).to receive(:rubagotchi_name=)
     allow(@user_interface).to receive(:render_quit_warning_menu)
     allow(@user_interface).to receive(:render_goodbye_message)
+    allow(@user_interface).to receive(:render_press_any_key_prompt)
 
     @rubagotchi = double(:rubagotchi)
     allow(@rubagotchi).to receive(:name)

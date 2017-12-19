@@ -93,13 +93,18 @@ private
     else
       @user_interface.render_is_not_hungry_message
     end
-    go_to_rubagotchi_interaction_menu
+    confirm_continue
   end
 
   def feed_rubagotchi
-    # TODO: Wait until user presset enter to continue back to menu
     @rubagotchi.feed
     @user_interface.render_rubagotchi_fed_message
+    confirm_continue
+  end
+
+  def confirm_continue
+    @user_interface.render_press_any_key_prompt
+    gets
     go_to_rubagotchi_interaction_menu
   end
 
