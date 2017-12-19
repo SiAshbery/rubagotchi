@@ -17,8 +17,7 @@ class GameManager
         go_to_new_rubagotchi_menu
         break
       when '2'
-        @user_interface.render_goodbye_message
-        exit
+        quit_game
         break
       else
         @user_interface.render_invalid_input_error
@@ -100,6 +99,9 @@ private
       go_to_rubagotchi_interaction_menu
     when :quit_menu
       go_to_confirm_quit_menu
+    else 
+      @user_interface.render_fatal_error
+      quit_game
     end
   end
 
@@ -110,5 +112,10 @@ private
   def create_new_rubagotchi(name)
     @rubagotchi = Rubagotchi.new(name)
     @user_interface.rubagotchi_name = name
+  end
+
+  def quit_game
+    @user_interface.render_goodbye_message
+    exit
   end
 end

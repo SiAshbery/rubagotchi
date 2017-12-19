@@ -96,6 +96,11 @@ describe UserInterface do
         expect { @user_interface.render_invalid_input_error }.
           to output("I'm sorry, I don't understand...\n").to_stdout
       end
+
+      it 'renders fatal error' do
+        expect { @user_interface.render_fatal_error }.
+          to output("Something's gone wrong, everything is going black...\n").to_stdout
+      end
     end
 
     describe '#Messages' do

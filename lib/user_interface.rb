@@ -41,6 +41,10 @@ class UserInterface
       puts "I'm sorry, I don't understand..."
     end
 
+    def render_fatal_error
+      puts "Something's gone wrong, everything is going black..."
+    end
+
     def render_name_input_prompt
       puts "Please input a name for your Rubagotchi."
     end
