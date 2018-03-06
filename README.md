@@ -2,7 +2,7 @@
 
 **This is a completed example of the Rubagotchi tamagotchi game.**
 
-What we are going to achieve here today is nothing short of a miracle. For we, dear friends, shall create life, LIFE! 
+What we are going to achieve here today is nothing short of a miracle. For we shall create life, LIFE!
 
 ```
 
@@ -35,25 +35,44 @@ What we are going to achieve here today is nothing short of a miracle. For we, d
 
 Or, well, not life but a nifty approximation of it in the form of a tamagotchi built in Ruby.
 
-Why Ruby?
----------
-Ruby is an extremely approachable programming language, especially for beginners. It puts emphasis on readability, versitility and ease of use. 
+# TO THE LABORATORY!
 
-In other words, learning to code in Ruby lets you focus on what you're doing and why rather than worrying if a ```}``` should be followed by a ```;```.
+## Step 1: Setup
 
-Ultimately it doesn't matter too much which coding language you start in, the core concepts of good software engineering are consistent in just about any language, the most important thing is to dive in, start playing, building and having some fun along the way.
+**Terminal**
 
-Setup
------
+Using the cursor and user interface (UI) on your computer is like pointing and gesturing at someone when you want them to do something. This is fine for quick and simple things but when there's a need to get a bit more advanced, you need to tell your computer exactly what you want it to do. That's where the terminal comes in.
+
+The terminal is an app that allows you to interact with your computer using text commands. It's an incredibly powerful tool and one that is at the heart of any software engineer's practice. But today we will be going through some very basic usage.
+
+There are many flavours of terminal out there with various quirks and capabilities, but every operating system comes with a default and that's more than enough for what we needs all the rest is just personal preference.
+
+To open the terminal, do the following:
+
+* On Linux press `ctrl+alt+t` or select 'terminal' from applications.
+* On Mac you can find the 'terminal' app in the apllications folder.
+* On Windows the 'command prompt' can be found under the start menu > All Programs > Accessories.
+
+
 **Text Editor:**
+
+The terminal is how we tell our computer what to do with with our code, but how do we write the code in the first place?
 
 Writing code is just that, writing, it's something anyone who has used a computer will be used to. But whilst apps like Microsoft Word can offer many wonderous ways to ruin a document by moving an image slightly to the left, they are not what you want for coding.
 
 There are however a myriad of fantastic text editors designed with coding in mind, any of which will be perfect for this project.
 
-I'd suggest getting started with [Atom](https://atom.io/), as it's free. friendly and fantastic. Also, with the syntax highlighting, all you will need is an artisanal coffee and beanie hat to complete the "professional software engineer look"&trade;.
+I'd suggest getting started with [Atom](https://atom.io/), as it's free. friendly and fantastic, and it has a version for every operating system. As a bonus, with the syntax highlighting, all you will need is an artisanal coffee and beanie hat to complete the "professional software engineer look"&trade;.
 
 **Installing Ruby:**
+
+Why Ruby?
+
+Ruby is an extremely approachable programming language, especially for beginners. It puts emphasis on readability, versitility and ease of use.
+
+In other words, learning to code in Ruby lets you focus on what you're doing and why rather than worrying if a `}` should be followed by a `;`.
+
+Ultimately it doesn't matter too much which coding language you start in, the core concepts of good software engineering are consistent in just about any language, the most important thing is to dive in, start playing, building and having some fun along the way.
 
 Mac:
 
@@ -108,5 +127,3 @@ Ascii Castle by Jeffrey T. Crites,
 Ascii Lignting by Dave Bird.
 
 Ascii Divider by Korgg
-
-
