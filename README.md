@@ -76,7 +76,6 @@ Ultimately it doesn't matter too much which coding language you start in, the co
 
 Mac:
 
-* Open up your terminal, you can find it in Applications/Utilities.
 * Install Homebrew by typing this command in the terminal.
   ```
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -89,11 +88,9 @@ Mac:
 Windows:
 
 * [Download and install Ruby](https://rubyinstaller.org/)
-* Open command prompt, you can find it in the start menu under All Programs -> Accessories.
 
 Linux:
 
-* Open up your terminal On Ubuntu, go to Applications -> Accessories -> Terminal or you can use Ctrl+Alt+T
 * Check if Ruby is installed by entering this command in the terminal
   ```
   which ruby
