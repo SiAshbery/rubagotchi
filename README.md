@@ -101,6 +101,75 @@ Linux:
   sudo apt-get install ruby-full
   ```
 
+**Github**
+
+Imagine you're baking a delicious cake, all is going well, you've got that buttery biscuit base, you've mixed up a delicious cheesecake filling, and now it's time to pop it in the oven. Only you realise with dawning dread that it wasn't cream cheese you mixed into the filling, it was mayonaise! Disaster, you can't unmayonaise your cake, the whole thing is ruined and so is your bestie's birthday.
+
+Now imagine that at every step of the baking process, you can magically make a copy of your cake, as is at that moment. When you realise your cake is an eggy nightmare rather than a cheesy dream, you can just go and get the copy you made of your cake before you reached for the Hellman's and take things from there, butty biscuit base and all.
+
+This is exactly what github does, it lets you keep a backup of your project that you can update at key points and switch back to whenever you need.
+
+**Forking the repo:**
+
+Forking a repo is a way of making a copy of it that is yours to do with as you wish.
+
+* First you're going to need to head over to [github](https://github.com/). There you can sign up for a free account with a valid email, user name and password.
+* Github will send you verification email, just click the link inside it and you're good to go.
+* Next you'll want to head to the [Rubagotchi repo](https://github.com/SiAshbery/rubagotchi) (if you're not already reading this there) and fork the repo.
+** insert image for fork button here **
+* You will now be looking at your own version of the repo. This repo is currently hosted remotely and whilst it is technically possible to do all your work online, it would be a clunky and frustrating process.
+
+**Installing git**
+We can interact with github and our local repos with git, but we will need to install it first.
+
+Installing *Git* on a *Mac*
+
+* Step 1 – Install [*Homebrew*](http://brew.sh/)
+
+> *Homebrew* […] simplifies the installation of software on the Mac OS X operating system.
+
+**Copy & paste the following** into the terminal window and **hit `Return`**.
+
+```shell
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew doctor
+```
+
+You will be offered to install the *Command Line Developer Tools* from *Apple*. **Confirm by clicking *Install***. After the installation finished, continue installing *Homebrew* by **hitting `Return`** again.
+
+* Step 2 – Install *Git*
+
+**Copy & paste the following** into the terminal window and **hit `Return`**.
+
+```shell
+brew install git
+```
+
+**You can use *Git* now.**
+
+**Cloning the repo**
+
+* Instead we want to hit the green clone or download button and copy the link that pops up to your clipboard.
+** insert image of clone or download + link dropdown here **
+* Now we're going to head over to the terminal.
+
+* Installing *Git* on *Linux*
+
+**Open a terminal window. Copy & paste the following** into the terminal window and **hit `Return`**. You may be prompted to enter your password.
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+```
+
+**You can use *Git* now.**
+
+* Installing *Git* on Windows
+
+**Download** *Git* from [Git for Windows](http://msysgit.github.io/) and **install it**.
+
+
 Get started
 -----------
 
