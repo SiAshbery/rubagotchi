@@ -39,7 +39,7 @@ Or, well, not life but a nifty approximation of it in the form of a tamagotchi b
 
 ## Step 1: Setup
 
-**Terminal**
+**Terminal:**
 
 Using the cursor and user interface (UI) on your computer is like pointing and gesturing at someone when you want them to do something. This is fine for quick and simple things but when there's a need to get a bit more advanced, you need to tell your computer exactly what you want it to do. That's where the terminal comes in.
 
@@ -101,7 +101,7 @@ Linux:
   sudo apt-get install ruby-full
   ```
 
-**Github**
+**Github:**
 
 Imagine you're baking a delicious cake, all is going well, you've got that buttery biscuit base, you've mixed up a delicious cheesecake filling, and now it's time to pop it in the oven. Only you realise with dawning dread that it wasn't cream cheese you mixed into the filling, it was mayonaise! Disaster, you can't unmayonaise your cake, the whole thing is ruined and so is your bestie's birthday.
 
@@ -119,9 +119,11 @@ Forking a repo is a way of making a copy of it that is yours to do with as you w
 ** insert image for fork button here **
 * You will now be looking at your own version of the repo. This repo is currently hosted remotely and whilst it is technically possible to do all your work online, it would be a clunky and frustrating process.
 
-**Installing git**
+**Installing git:**
+
 We can interact with github and our local repos with git, but we will need to install it first.
 
+---
 Installing *Git* on a *Mac*
 
 * Step 1 – Install [*Homebrew*](http://brew.sh/)
@@ -139,36 +141,34 @@ You will be offered to install the *Command Line Developer Tools* from *Apple*. 
 
 * Step 2 – Install *Git*
 
-**Copy & paste the following** into the terminal window and **hit `Return`**.
+Copy & paste the following into the terminal window and hit `Return`.
 
 ```shell
 brew install git
 ```
+---
+Installing *Git* on *Linux*
 
-**You can use *Git* now.**
-
-**Cloning the repo**
-
-* Instead we want to hit the green clone or download button and copy the link that pops up to your clipboard.
-** insert image of clone or download + link dropdown here **
-* Now we're going to head over to the terminal.
-
-* Installing *Git* on *Linux*
-
-**Open a terminal window. Copy & paste the following** into the terminal window and **hit `Return`**. You may be prompted to enter your password.
+Open a terminal window. Copy & paste the following into the terminal window and hit `Return`. You may be prompted to enter your password.
 
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git
 ```
+---
+Installing *Git* on Windows
 
-**You can use *Git* now.**
+Download *Git* from [Git for Windows](http://msysgit.github.io/) and install it.
+---
 
-* Installing *Git* on Windows
+You can use *Git* now.
 
-**Download** *Git* from [Git for Windows](http://msysgit.github.io/) and **install it**.
+**Cloning the repo:**
 
+* Instead we want to hit the green clone or download button and copy the link that pops up to your clipboard.
+** insert image of clone or download + link dropdown here **
+* Now we're going to head over to the terminal.
 
 Get started
 -----------
